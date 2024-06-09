@@ -5,7 +5,7 @@ const authRoute = require("../routes/Auth")
 const userRoute = require("../routes/userRoute")
 const productRoute = require("../routes/productRoute")
 const orderRoute = require("../routes/orderRoute")
-const cartRoute = require("../routes/CartRoute")
+const cartRoute = require("../routes/cartRoute")
 const stripeRoute = require("../routes/stripe");
 const cors = require("cors");
 
@@ -19,7 +19,7 @@ mongoose.connect(process.env.DB_CONNECT)
     .then(() => console.log('DB connection'))
     .catch((err) => console.log(err))
 
-app.listen(process.env.PORT, (req, res) => {
+app.listen(process.env.PORT || 4000, (req, res) => {
     console.log(`server is running on port ${process.env.PORT}`)
 });
 
